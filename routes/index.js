@@ -1,45 +1,41 @@
 const express = require("express");
-const { PROJECTS, bySlug, featured, neighbours } = require("../data/projects");
+const { PROJECTS, TECHNOLOGIES, bySlug, featured, neighbours } = require("../data/projects");
 
 const router = express.Router();
 
 router.get("/", (req, res) => {
     res.render("index", {
-        title: "Software Developer",
+        title: "Home",
         page: "home",
-        projects: featured()
+        projects: featured(),
+        technologies: TECHNOLOGIES
     });
 });
 
 router.get("/about", (req, res) => {
     res.render("about", {
-        title: "About",
+        title: "About Me",
         page: "about"
     });
 });
 
-router.get("/work", (req, res) => {
-    res.render("work", {
-        title: "Work",
-        page: "work",
+router.get("/projects", (req, res) => {
+    res.render("projects", {
+        title: "Projects",
+        page: "projects",
         projects: PROJECTS
     });
 });
 
-// Old URL, kept so existing links and bookmarks don't break.
-router.get("/projects", (req, res) => {
-    res.redirect(301, "/work");
-});
-
-router.get("/work/:slug", (req, res, next) => {
+router.get("/projects/:slug", (req, res, next) => {
     const project = bySlug(req.params.slug);
     if (!project) {
         return next();
     }
     const { prev, next: after } = neighbours(project.slug);
-    res.render("case", {
+    res.render("project", {
         title: project.name,
-        page: "work",
+        page: "projects",
         project,
         prev,
         next: after
@@ -53,9 +49,13 @@ router.get("/contact", (req, res) => {
     });
 });
 
+// Short-lived URLs from the redesign, kept so nothing 404s.
+router.get("/work", (req, res) => res.redirect(301, "/projects"));
+router.get("/work/:slug", (req, res) => res.redirect(301, "/projects/" + req.params.slug));
+
 router.use((req, res) => {
     res.status(404).render("404", {
-        title: "Page not found",
+        title: "Page Not Found",
         page: "missing"
     });
 });

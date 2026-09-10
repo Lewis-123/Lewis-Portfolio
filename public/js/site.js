@@ -121,25 +121,6 @@
     }
 
     /* ----------------------------------------------------------------------
-       Nairobi clock — EAT is UTC+3 year round
-       ---------------------------------------------------------------------- */
-
-    const clock = document.querySelector("[data-clock]");
-
-    if (clock) {
-        const tick = () => {
-            clock.textContent = new Intl.DateTimeFormat("en-GB", {
-                hour: "2-digit",
-                minute: "2-digit",
-                hour12: false,
-                timeZone: "Africa/Nairobi"
-            }).format(new Date());
-        };
-        tick();
-        setInterval(tick, 30000);
-    }
-
-    /* ----------------------------------------------------------------------
        Copy to clipboard — inline confirmation, not a notification
        ---------------------------------------------------------------------- */
 

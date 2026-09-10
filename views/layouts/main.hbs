@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{#if (eq page "home")}}Lewis Mucheru — Software Developer{{else}}{{title}} — Lewis Mucheru{{/if}}</title>
-    <meta name="description" content="Lewis Mucheru is a software developer in Nairobi. Full-stack, a little machine learning, the odd Android app.">
+    <title>Lewis Mucheru | {{title}}</title>
+    <meta name="description" content="Lewis Mucheru - Software Developer specializing in Full Stack Development, Artificial Intelligence, Machine Learning and Data Science.">
     <meta name="author" content="Lewis Mucheru">
     <meta name="theme-color" content="#faf9f7" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#0e0e0d" media="(prefers-color-scheme: dark)">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Lewis Mucheru — Software Developer">
-    <meta property="og:description" content="Software developer in Nairobi. Full-stack, a little machine learning, the odd Android app.">
+    <meta property="og:title" content="Lewis Mucheru | Software Developer">
+    <meta property="og:description" content="Lewis Mucheru - Software Developer specializing in Full Stack Development, Artificial Intelligence, Machine Learning and Data Science.">
 
     <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
     <link rel="alternate icon" href="/images/favicon.png">
@@ -41,23 +41,21 @@
 
     <header class="masthead" id="masthead">
         <div class="masthead-inner">
-            <a class="wordmark" href="/">
-                Lewis Mucheru
-                <span class="wordmark-role">Nairobi</span>
-            </a>
+            <a class="wordmark" href="/">Lewis<span>Mucheru</span></a>
 
             <div class="nav-cluster">
                 <nav class="nav" id="nav" aria-label="Primary">
                     <span class="nav-pill" aria-hidden="true"></span>
-                    <a href="/work" {{#if (eq page "work")}}aria-current="page"{{/if}}>Work</a>
+                    <a href="/" {{#if (eq page "home")}}aria-current="page"{{/if}}>Home</a>
                     <a href="/about" {{#if (eq page "about")}}aria-current="page"{{/if}}>About</a>
+                    <a href="/projects" {{#if (eq page "projects")}}aria-current="page"{{/if}}>Projects</a>
                     <a href="/contact" {{#if (eq page "contact")}}aria-current="page"{{/if}}>Contact</a>
                 </nav>
 
                 <button class="jump-btn" id="palette-open" type="button" aria-haspopup="dialog" aria-controls="palette" aria-expanded="false">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
                     <kbd data-palette-hint>⌘K</kbd>
-                    <span class="visually-hidden">Search this site</span>
+                    <span class="visually-hidden">Jump to a page or project</span>
                 </button>
 
                 <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch theme">
@@ -75,13 +73,13 @@
     <footer class="site-footer">
         <div class="footer-inner">
             <p class="footer-note">
-                Nairobi, Kenya · <span class="clock" data-clock aria-label="Local time in Nairobi">—</span>
+                © 2026 Lewis Mucheru <span aria-hidden="true">|</span> Software Developer
+                <span aria-hidden="true">|</span> AI &amp; Machine Learning
             </p>
             <p class="footer-links">
                 <a href="https://github.com/Lewis-123" target="_blank" rel="noopener noreferrer">GitHub</a>
                 <a href="https://www.linkedin.com/in/lewis-mucheru-6468b7228/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 <a href="mailto:mucherulewis@gmail.com">Email</a>
-                <a href="/files/Lewis-Mucheru-Resume.pdf" download>Résumé</a>
             </p>
         </div>
     </footer>
@@ -89,21 +87,21 @@
     <div class="palette" id="palette" hidden>
         <button class="palette-scrim" type="button" tabindex="-1" aria-label="Close search"></button>
         <div class="palette-panel" role="dialog" aria-modal="true" aria-labelledby="palette-title">
-            <h2 id="palette-title" class="visually-hidden">Search this site</h2>
+            <h2 id="palette-title" class="visually-hidden">Search pages and projects</h2>
             <label class="palette-field">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-                <span class="visually-hidden">Search pages and work</span>
-                <input id="palette-input" type="search" placeholder="Search pages and work…" autocomplete="off" autocorrect="off" spellcheck="false" enterkeyhint="go" aria-controls="palette-list" aria-autocomplete="list">
+                <span class="visually-hidden">Search pages and projects</span>
+                <input id="palette-input" type="search" placeholder="Search pages and projects" autocomplete="off" autocorrect="off" spellcheck="false" enterkeyhint="go" aria-controls="palette-list" aria-autocomplete="list">
             </label>
             <ul class="palette-list" id="palette-list" role="listbox" aria-label="Results">
                 <li class="palette-group" role="presentation">Pages</li>
-                <li role="presentation"><a role="option" href="/" data-terms="home index lewis">Home<span>Page</span></a></li>
-                <li role="presentation"><a role="option" href="/work" data-terms="work projects case studies">Work<span>Page</span></a></li>
-                <li role="presentation"><a role="option" href="/about" data-terms="about background education">About<span>Page</span></a></li>
-                <li role="presentation"><a role="option" href="/contact" data-terms="contact email hello hire">Contact<span>Page</span></a></li>
-                <li class="palette-group" role="presentation">Work</li>
+                <li role="presentation"><a role="option" href="/" data-terms="home index lewis mucheru">Home<span>Page</span></a></li>
+                <li role="presentation"><a role="option" href="/about" data-terms="about background education journey">About<span>Page</span></a></li>
+                <li role="presentation"><a role="option" href="/projects" data-terms="projects work portfolio">Projects<span>Page</span></a></li>
+                <li role="presentation"><a role="option" href="/contact" data-terms="contact email phone hire message">Contact<span>Page</span></a></li>
+                <li class="palette-group" role="presentation">Projects</li>
                 {{#each allProjects}}
-                <li role="presentation"><a role="option" href="/work/{{this.slug}}" data-terms="{{this.slug}} {{join this.stack ' '}}">{{this.name}}<span>{{this.year}}</span></a></li>
+                <li role="presentation"><a role="option" href="/projects/{{this.slug}}" data-terms="{{this.slug}} {{this.subtitle}} {{join this.tech ' '}}">{{this.name}}<span>Project</span></a></li>
                 {{/each}}
             </ul>
             <p class="palette-empty" id="palette-empty" hidden>Nothing matches that.</p>

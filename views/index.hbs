@@ -1,38 +1,34 @@
 <section class="rail opening">
     <div class="opening-grid">
         <div>
-            <p class="status" data-reveal style="--i:0">
-                <span class="status-dot" aria-hidden="true"></span>
-                Open to work
+            <h1 data-reveal>Lewis Mucheru</h1>
+
+            <p class="role" data-reveal style="--i:1">
+                Software Developer <span aria-hidden="true">|</span> AI &amp; Machine Learning Developer
             </p>
 
-            <h1 data-reveal style="--i:1">
-                I build software that has to hold up <em>after</em> the demo.
-            </h1>
-
             <p class="lede" data-reveal style="--i:2">
-                I'm Lewis — a developer in Nairobi. Websites, APIs, a little machine
-                learning, the odd Android app. Most of what I've made was for someone
-                specific, and I can tell you what I'd change about all of it.
+                I build intelligent, scalable software solutions using
+                Full-Stack Development, Artificial Intelligence,
+                Machine Learning, Data Science, and Mobile Technologies.
             </p>
 
             <div class="actions" data-reveal style="--i:3">
-                <a class="btn" href="/work">See the work</a>
-                <a class="btn btn-quiet" href="/contact">Get in touch</a>
+                <a class="btn" href="/projects">View Projects</a>
+                <a class="btn btn-quiet" href="/contact">Contact Me</a>
+                <a class="btn btn-quiet" href="/files/Lewis-Mucheru-Resume.pdf" download>Download Resume</a>
             </div>
         </div>
 
         <figure class="portrait" data-reveal style="--i:2">
-            <img src="/images/profile.jpg" alt="Lewis Mucheru, smiling, in a dark suit and navy tie" width="640" height="800">
-            <figcaption>That's me.<br>Nairobi, most days.</figcaption>
+            <img src="/images/profile.jpg" alt="Lewis Mucheru" width="640" height="800">
         </figure>
     </div>
 </section>
 
-<section class="rail band" aria-labelledby="work-heading">
+<section class="rail band" aria-labelledby="projects-heading">
     <div class="section-head" data-reveal>
-        <h2 class="eyebrow" id="work-heading">Selected work</h2>
-        <p>Three I'd sit down and walk you through</p>
+        <h2 class="eyebrow" id="projects-heading">My Projects</h2>
     </div>
 
     <div class="index">
@@ -40,43 +36,39 @@
         {{> index-item project=this index=@index}}
         {{/each}}
     </div>
+</section>
 
-    <p class="form-note" data-reveal style="margin-top:1.5rem">
-        <a class="link" href="/work">All six projects</a>
+<section class="measure band--tight" aria-labelledby="technologies-heading">
+    <h2 class="eyebrow" id="technologies-heading" data-reveal>Technologies I Work With</h2>
+    <p class="lede" data-reveal style="--i:1">
+        Technologies and tools I use to build modern, scalable software
+        applications, intelligent systems, and data-driven solutions.
     </p>
 </section>
 
-<section class="measure band" aria-labelledby="how-heading">
-    <h2 class="eyebrow" id="how-heading" data-reveal>How I work</h2>
-    <div class="prose" data-reveal style="--i:1">
-        <p>
-            I finished a BSc in Software Development at KCA University in 2025 and
-            learned the stack the long way round — databases, then interfaces, then
-            APIs, then the machine-learning parts that only earn a place if they
-            help somebody.
-        </p>
-        <p>
-            The through-line in everything below is the same: I'd rather build the
-            unglamorous half properly than the demo-able half quickly. Admin
-            screens, error states, the thing that happens on a bad connection. That
-            is usually where the product actually lives.
-        </p>
-        <p>
-            <a class="link" href="/about">More about me</a>
-        </p>
-    </div>
+<section class="rail" style="padding-bottom:clamp(3rem,7vw,4.5rem)">
+    <ul class="tech-list" data-reveal>
+        {{#each technologies}}
+        <li>{{this}}</li>
+        {{/each}}
+    </ul>
 </section>
 
 <section class="measure band--tight" style="padding-bottom:clamp(4rem,10vw,7rem)">
     <div data-reveal>
-        <h2 style="margin-bottom:1rem">Looking for someone?</h2>
+        <h2 style="margin-bottom:1rem">Let’s Build Something Innovative</h2>
         <p class="lede" style="margin-bottom:1.75rem">
-            I'm open to work and I read every note that comes in — roles,
-            collaborations, or "I just liked the site."
+            I am open to software development opportunities, AI projects,
+            collaborations, and technology-driven solutions.
         </p>
         <div class="actions">
-            <a class="btn" href="/contact">Say hello</a>
-            <a class="btn btn-quiet" href="/files/Lewis-Mucheru-Resume.pdf" download>Download résumé</a>
+            <a class="btn" href="https://www.linkedin.com/in/lewis-mucheru-6468b7228/" target="_blank" rel="noopener noreferrer">
+                LinkedIn<span class="visually-hidden"> (opens in a new tab)</span>
+            </a>
+            <a class="btn btn-quiet" href="https://github.com/Lewis-123" target="_blank" rel="noopener noreferrer">
+                GitHub<span class="visually-hidden"> (opens in a new tab)</span>
+            </a>
+            <a class="btn btn-quiet" href="mailto:mucherulewis@gmail.com">Email Me</a>
         </div>
     </div>
 </section>

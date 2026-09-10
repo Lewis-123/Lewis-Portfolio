@@ -18,11 +18,11 @@ The portfolio highlights my work in:
 
 ## Features
 
-- Editorial landing page with selected work
-- A full case study page per project at `/work/:slug`
+- Editorial landing page with featured projects and the full technology list
+- A dedicated page per project at `/projects/:slug`
 - Command palette (Cmd/Ctrl+K or `/`) for jumping to any page or project
 - Light and dark themes, remembered between visits
-- Reading progress indicator on case studies
+- Reading progress indicator on project pages
 - Copy-to-clipboard contact details with inline confirmation
 - Resume download, LinkedIn and GitHub links
 - About section with education and experience timeline
@@ -56,7 +56,7 @@ Lewis-Portfolio
 ├── bin
 │   └── www
 ├── data
-│   └── projects.js          # all case study content lives here
+│   └── projects.js          # all project copy lives here
 ├── routes
 │   └── index.js
 ├── views
@@ -65,8 +65,8 @@ Lewis-Portfolio
 │   ├── partials
 │   │   └── index-item.hbs
 │   ├── index.hbs
-│   ├── work.hbs             # work index
-│   ├── case.hbs             # /work/:slug case study
+│   ├── projects.hbs         # projects index
+│   ├── project.hbs          # /projects/:slug
 │   ├── about.hbs
 │   ├── contact.hbs
 │   └── 404.hbs

@@ -1,0 +1,37 @@
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<article>
+    <header class="measure case-head">
+        <p class="eyebrow" data-reveal>
+            <a class="link" href="/projects" style="color:inherit">Projects</a>{{#if project.badge}} — {{project.badge}}{{/if}}
+        </p>
+        <h1 data-reveal style="--i:1">{{project.name}}</h1>
+        <p class="lede" data-reveal style="--i:2">{{project.subtitle}}</p>
+    </header>
+
+    <div class="measure case-body">
+        <section data-reveal>
+            {{#each project.description}}
+            <p>{{this}}</p>
+            {{/each}}
+        </section>
+    </div>
+
+    <div class="measure case-foot">
+        <span class="index-stack">{{join project.tech " · "}}</span>
+        <a class="link link-out" href="{{project.link.href}}" target="_blank" rel="noopener noreferrer">
+            {{project.link.label}}<span class="visually-hidden"> (opens in a new tab)</span>
+        </a>
+    </div>
+</article>
+
+<nav class="measure case-nav" aria-label="More projects">
+    <a href="/projects/{{prev.slug}}">
+        <span class="eyebrow">Previous</span>
+        <span>{{prev.name}}</span>
+    </a>
+    <a href="/projects/{{next.slug}}">
+        <span class="eyebrow">Next</span>
+        <span>{{next.name}}</span>
+    </a>
+</nav>

@@ -372,11 +372,7 @@ main {
     user-select: none;
 }
 
-.wordmark-role {
-    font-family: var(--mono);
-    font-size: 0.6875rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+.wordmark span {
     color: var(--text-3);
     transition: color var(--base) var(--ease);
 }
@@ -568,57 +564,48 @@ main {
     padding-bottom: clamp(1.5rem, 4vw, 2.5rem);
 }
 
-.status {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1.75rem;
-    font-family: var(--mono);
-    font-size: 0.6875rem;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-    color: var(--text-3);
-}
-
-.status-dot {
-    position: relative;
-    width: 0.4rem;
-    height: 0.4rem;
-    border-radius: 999px;
-    background: var(--live);
-    pointer-events: none;
-}
-
-.status-dot::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: inherit;
-    animation: ping 2.8s var(--ease-out) infinite;
-}
-
-@keyframes ping {
-    0% { opacity: 0.6; transform: scale(1); }
-    70%, 100% { opacity: 0; transform: scale(3); }
-}
-
 .opening h1 {
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.6rem;
 }
 
-.opening h1 em {
-    font-style: italic;
+/* The professional title under the name. */
+.role {
+    margin: 0 0 1.5rem;
+    font-size: clamp(1rem, 1.8vw, 1.125rem);
     color: var(--text-2);
+}
+
+.role span {
+    margin-inline: 0.15em;
+    color: var(--line-2);
 }
 
 .opening .lede {
     max-width: 34rem;
-    margin-bottom: 2rem;
 }
 
 .opening .actions {
     margin-top: 2rem;
+}
+
+/* The full technology list — plain text, wrapped, no logos. */
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.tech-list li {
+    padding: 0.35rem 0.7rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-family: var(--mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.03em;
+    color: var(--text-2);
 }
 
 /* Portrait sits beside the intro, small and quiet. */
@@ -718,6 +705,18 @@ main {
     align-self: baseline;
 }
 
+.badge {
+    padding: 0.2rem 0.55rem;
+    border: 1px solid var(--line-2);
+    border-radius: 999px;
+    font-family: var(--mono);
+    font-size: 0.625rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    white-space: nowrap;
+}
+
 .index-arrow {
     display: inline-block;
     color: var(--text-3);
@@ -814,54 +813,8 @@ main {
     max-width: 32rem;
 }
 
-.case-facts {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(8rem, 100%), 1fr));
-    gap: 1.5rem;
-    margin: 2.5rem 0 0;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--line);
-}
-
-.case-facts dt {
-    margin-bottom: 0.4rem;
-    font-family: var(--mono);
-    font-size: 0.6875rem;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-    color: var(--text-3);
-}
-
-.case-facts dd {
-    margin: 0;
-    font-size: 0.9375rem;
-    color: var(--text);
-}
-
-/* Wide enough that the margin heading doesn't eat into the reading measure. */
-.measure > .case-body,
-.measure > .case-nav {
-    max-width: calc(var(--measure) + 8.5rem);
-}
-
-.case-body section {
-    padding-block: clamp(2rem, 5vw, 3rem);
-    border-top: 1px solid var(--line);
-}
-
-.case-body section:first-child {
-    border-top: 0;
-    padding-top: 0;
-}
-
-/* Heading sits in the left margin on wide screens, above the text otherwise. */
-.case-body h2 {
-    font-family: var(--sans);
-    font-size: 0.8125rem;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    color: var(--text-3);
-    margin-bottom: 1rem;
+.case-body {
+    padding-top: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 .case-body p {
@@ -937,10 +890,19 @@ main {
 
 .entries li {
     display: grid;
-    grid-template-columns: 7rem minmax(0, 1fr);
+    grid-template-columns: 8.5rem minmax(0, 1fr);
     gap: 0.5rem 1.5rem;
     padding-block: 1.25rem;
     border-bottom: 1px solid var(--line);
+}
+
+.entry-where {
+    margin: 0 0 0.5rem;
+    font-family: var(--mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-3);
 }
 
 .entries li:first-child {
@@ -993,8 +955,10 @@ main {
    11. Contact
    -------------------------------------------------------------------------- */
 
+/* The row hover/press area bleeds past the reading rail, so the negative
+   inline margin lives here — that keeps every row border the same width. */
 .contact-rows {
-    margin: 2.5rem 0 0;
+    margin: 2.5rem -0.75rem 0;
     border-top: 1px solid var(--line);
 }
 
@@ -1005,7 +969,6 @@ main {
     gap: 1rem;
     width: 100%;
     padding: 1.1rem 0.75rem;
-    margin-inline: -0.75rem;
     border: 0;
     border-bottom: 1px solid var(--line);
     border-radius: 0.5rem;
@@ -1041,6 +1004,12 @@ main {
 /* Inline confirmation on copy, no toast. */
 .contact-action[data-state="copied"] {
     color: var(--live);
+}
+
+/* A plain fact rather than something to act on. */
+.contact-row--static {
+    margin-block: 0;
+    cursor: default;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -1127,7 +1096,7 @@ main {
 .footer-note {
     margin: 0;
     font-size: 0.875rem;
-    color: var(--text-3);
+    color: var(--text-2);
 }
 
 .footer-links {
@@ -1150,11 +1119,9 @@ main {
     }
 }
 
-.clock {
-    font-family: var(--mono);
-    font-size: 0.75rem;
-    font-variant-numeric: tabular-nums;
-    color: var(--text-3);
+.footer-note span {
+    margin-inline: 0.15em;
+    color: var(--line-2);
 }
 
 /* --------------------------------------------------------------------------
@@ -1339,16 +1306,6 @@ body.is-locked {
 
 @media (min-width: 60rem) {
     /* Case study headings move into the left margin at reading width. */
-    .case-body section {
-        display: grid;
-        grid-template-columns: 7rem minmax(0, 1fr);
-        gap: 1.5rem;
-    }
-
-    .case-body h2 {
-        margin-bottom: 0;
-        padding-top: 0.32rem;
-    }
 }
 
 @media (max-width: 48rem) {
@@ -1361,7 +1318,7 @@ body.is-locked {
         width: 8rem;
     }
 
-    .wordmark-role {
+    .wordmark span {
         display: none;
     }
 
