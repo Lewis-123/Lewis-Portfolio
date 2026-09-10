@@ -1,82 +1,63 @@
 const express = require("express");
+const { PROJECTS, bySlug, featured, neighbours } = require("../data/projects");
 
 const router = express.Router();
 
-
-// Home Page
-
-router.get("/", (req, res)=>{
-
+router.get("/", (req, res) => {
     res.render("index", {
-
-        title:"Home"
-
+        title: "Software Developer",
+        page: "home",
+        projects: featured()
     });
-
 });
 
-
-
-
-// About Page
-
-router.get("/about",(req,res)=>{
-
-    res.render("about",{
-
-        title:"About Me"
-
+router.get("/about", (req, res) => {
+    res.render("about", {
+        title: "About",
+        page: "about"
     });
-
 });
 
-
-
-
-// Projects Page
-
-router.get("/projects",(req,res)=>{
-
-    res.render("projects",{
-
-        title:"Projects"
-
+router.get("/work", (req, res) => {
+    res.render("work", {
+        title: "Work",
+        page: "work",
+        projects: PROJECTS
     });
-
 });
 
-
-
-
-// Contact Page
-
-router.get("/contact",(req,res)=>{
-
-    res.render("contact",{
-
-        title:"Contact"
-
-    });
-
+// Old URL, kept so existing links and bookmarks don't break.
+router.get("/projects", (req, res) => {
+    res.redirect(301, "/work");
 });
 
-
-
-
-
-// 404 Page
-
-router.use((req,res)=>{
-
-    res.status(404).render("404",{
-
-        title:"Page Not Found"
-
+router.get("/work/:slug", (req, res, next) => {
+    const project = bySlug(req.params.slug);
+    if (!project) {
+        return next();
+    }
+    const { prev, next: after } = neighbours(project.slug);
+    res.render("case", {
+        title: project.name,
+        page: "work",
+        project,
+        prev,
+        next: after
     });
-
 });
 
+router.get("/contact", (req, res) => {
+    res.render("contact", {
+        title: "Contact",
+        page: "contact"
+    });
+});
 
-
+router.use((req, res) => {
+    res.status(404).render("404", {
+        title: "Page not found",
+        page: "missing"
+    });
+});
 
 module.exports = router;

@@ -1,0 +1,10 @@
+<a class="index-item" href="/work/{{project.slug}}" data-reveal style="--i:{{index}}">
+    <span class="index-num">{{pad index}}</span>
+    <span class="index-name">{{project.name}}</span>
+    <span class="index-meta">
+        <span class="num">{{project.year}}</span>
+        <span class="index-arrow" aria-hidden="true">&rarr;</span>
+    </span>
+    <span class="index-summary">{{project.summary}}</span>
+    <span class="index-stack">{{join project.stack " · "}}</span>
+</a>

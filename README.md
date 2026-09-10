@@ -18,14 +18,15 @@ The portfolio highlights my work in:
 
 ## Features
 
-- Professional landing page
-- Resume download functionality
-- LinkedIn and GitHub integration
-- Technology showcase
+- Editorial landing page with selected work
+- A full case study page per project at `/work/:slug`
+- Command palette (Cmd/Ctrl+K or `/`) for jumping to any page or project
+- Light and dark themes, remembered between visits
+- Reading progress indicator on case studies
+- Copy-to-clipboard contact details with inline confirmation
+- Resume download, LinkedIn and GitHub links
 - About section with education and experience timeline
-- Projects showcase
-- Contact section
-- Responsive mobile design
+- Responsive from 320px up, with reduced-motion and high-contrast support
 
 ## Technologies Used
 
@@ -52,27 +53,44 @@ Deployment:
 Lewis-Portfolio
 
 ├── app.js
+├── bin
+│   └── www
+├── data
+│   └── projects.js          # all case study content lives here
 ├── routes
 │   └── index.js
 ├── views
 │   ├── layouts
 │   │   └── main.hbs
+│   ├── partials
+│   │   └── index-item.hbs
 │   ├── index.hbs
+│   ├── work.hbs             # work index
+│   ├── case.hbs             # /work/:slug case study
 │   ├── about.hbs
-│   ├── projects.hbs
 │   ├── contact.hbs
 │   └── 404.hbs
 ├── public
 │   ├── css
 │   │   └── style.css
+│   ├── js
+│   │   └── site.js
 │   ├── images
 │   │   ├── profile.jpg
+│   │   ├── favicon.svg
 │   │   └── favicon.png
 │   └── files
 │       └── Lewis-Mucheru-Resume.pdf
 ├── package.json
 ├── vercel.json
 └── README.md
+
+## Adding or editing a project
+
+Everything shown on the work index and case study pages comes from
+`data/projects.js`. Add an object to the `PROJECTS` array and the route,
+the index, the command palette and the previous/next links all pick it up.
+Set `featured: true` to surface it on the home page.
 
 ## Installation
 

@@ -1,173 +1,115 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{#if (eq page "home")}}Lewis Mucheru — Software Developer{{else}}{{title}} — Lewis Mucheru{{/if}}</title>
+    <meta name="description" content="Lewis Mucheru is a software developer in Nairobi. Full-stack, a little machine learning, the odd Android app.">
+    <meta name="author" content="Lewis Mucheru">
+    <meta name="theme-color" content="#faf9f7" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0e0e0d" media="(prefers-color-scheme: dark)">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Lewis Mucheru — Software Developer">
+    <meta property="og:description" content="Software developer in Nairobi. Full-stack, a little machine learning, the odd Android app.">
 
-
-    <meta name="description"
-    content="Lewis Mucheru - Software Developer specializing in Full Stack Development, Artificial Intelligence, Machine Learning and Data Science.">
-
-
-    <meta name="author"
-    content="Lewis Mucheru">
-
-
-    <title>
-        Lewis Mucheru | {{title}}
-    </title>
-    <link rel="icon" type="image/png" href="/images/favicon.png">
-    
-
-
-    <link rel="stylesheet" href="/css/style.css">
-
+    <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="/images/favicon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;450;500&family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..400&display=swap">
+    <link rel="stylesheet" href="/css/style.css">
 
-
-    <link 
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" 
-    rel="stylesheet">
-
-
+    <script>
+        // Resolve the theme before first paint so there is no flash.
+        (function () {
+            var root = document.documentElement;
+            root.classList.add("js");
+            try {
+                var saved = localStorage.getItem("theme");
+                var dark = saved ? saved === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+                root.setAttribute("data-theme", dark ? "dark" : "light");
+            } catch (e) {
+                root.setAttribute("data-theme", "light");
+            }
+        })();
+    </script>
 </head>
-
-
-
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
+    <header class="masthead" id="masthead">
+        <div class="masthead-inner">
+            <a class="wordmark" href="/">
+                Lewis Mucheru
+                <span class="wordmark-role">Nairobi</span>
+            </a>
 
+            <div class="nav-cluster">
+                <nav class="nav" id="nav" aria-label="Primary">
+                    <span class="nav-pill" aria-hidden="true"></span>
+                    <a href="/work" {{#if (eq page "work")}}aria-current="page"{{/if}}>Work</a>
+                    <a href="/about" {{#if (eq page "about")}}aria-current="page"{{/if}}>About</a>
+                    <a href="/contact" {{#if (eq page "contact")}}aria-current="page"{{/if}}>Contact</a>
+                </nav>
 
-<nav class="navbar">
+                <button class="jump-btn" id="palette-open" type="button" aria-haspopup="dialog" aria-controls="palette" aria-expanded="false">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                    <kbd data-palette-hint>⌘K</kbd>
+                    <span class="visually-hidden">Search this site</span>
+                </button>
 
+                <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch theme">
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
 
-    <div class="logo">
+    <main id="main">
+        {{{body}}}
+    </main>
 
-        <a href="/">
-            Lewis<span>Mucheru</span>
-        </a>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="footer-note">
+                Nairobi, Kenya · <span class="clock" data-clock aria-label="Local time in Nairobi">—</span>
+            </p>
+            <p class="footer-links">
+                <a href="https://github.com/Lewis-123" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/lewis-mucheru-6468b7228/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="mailto:mucherulewis@gmail.com">Email</a>
+                <a href="/files/Lewis-Mucheru-Resume.pdf" download>Résumé</a>
+            </p>
+        </div>
+    </footer>
 
+    <div class="palette" id="palette" hidden>
+        <button class="palette-scrim" type="button" tabindex="-1" aria-label="Close search"></button>
+        <div class="palette-panel" role="dialog" aria-modal="true" aria-labelledby="palette-title">
+            <h2 id="palette-title" class="visually-hidden">Search this site</h2>
+            <label class="palette-field">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                <span class="visually-hidden">Search pages and work</span>
+                <input id="palette-input" type="search" placeholder="Search pages and work…" autocomplete="off" autocorrect="off" spellcheck="false" enterkeyhint="go" aria-controls="palette-list" aria-autocomplete="list">
+            </label>
+            <ul class="palette-list" id="palette-list" role="listbox" aria-label="Results">
+                <li class="palette-group" role="presentation">Pages</li>
+                <li role="presentation"><a role="option" href="/" data-terms="home index lewis">Home<span>Page</span></a></li>
+                <li role="presentation"><a role="option" href="/work" data-terms="work projects case studies">Work<span>Page</span></a></li>
+                <li role="presentation"><a role="option" href="/about" data-terms="about background education">About<span>Page</span></a></li>
+                <li role="presentation"><a role="option" href="/contact" data-terms="contact email hello hire">Contact<span>Page</span></a></li>
+                <li class="palette-group" role="presentation">Work</li>
+                {{#each allProjects}}
+                <li role="presentation"><a role="option" href="/work/{{this.slug}}" data-terms="{{this.slug}} {{join this.stack ' '}}">{{this.name}}<span>{{this.year}}</span></a></li>
+                {{/each}}
+            </ul>
+            <p class="palette-empty" id="palette-empty" hidden>Nothing matches that.</p>
+        </div>
     </div>
 
-
-
-    <button class="menu-toggle" id="menu-toggle">
-
-        ☰
-
-    </button>
-
-
-
-    <div class="nav-links" id="nav-links">
-
-
-        <a href="/">
-            Home
-        </a>
-
-
-        <a href="/about">
-            About
-        </a>
-
-
-        <a href="/projects">
-            Projects
-        </a>
-
-
-        <a href="/contact">
-            Contact
-        </a>
-
-
-    </div>
-
-
-
-</nav>
-
-
-
-
-
-<main>
-
-    {{{body}}}
-
-</main>
-
-
-
-
-
-<footer>
-
-
-    <p>
-        © 2026 Lewis Mucheru | Software Developer | AI & Machine Learning
-    </p>
-
-
-
-    <div class="footer-links">
-
-
-        <a href="https://github.com/Lewis-123" target="_blank">
-            GitHub
-        </a>
-
-
-        <a href="https://www.linkedin.com/in/lewis-mucheru-6468b7228/" target="_blank">
-            LinkedIn
-        </a>
-
-
-        <a href="mailto:mucherulewis@gmail.com">
-            Email
-        </a>
-
-
-    </div>
-
-
-
-</footer>
-
-
-
-
-
-<script>
-
-
-const menuButton = document.getElementById("menu-toggle");
-
-const navLinks = document.getElementById("nav-links");
-
-
-
-menuButton.addEventListener("click",()=>{
-
-    navLinks.classList.toggle("active");
-
-});
-
-
-</script>
-
-
-
+    <script src="/js/site.js" defer></script>
 </body>
-
-
 </html>
