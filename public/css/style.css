@@ -679,3 +679,22 @@ main {
 
 
 }
+.resume-btn {
+
+    background:
+    linear-gradient(
+        90deg,
+        #a855f7,
+        #38bdf8
+    );
+
+    color:white;
+
+}
+
+
+.resume-btn:hover {
+
+    opacity:0.85;
+
+}
