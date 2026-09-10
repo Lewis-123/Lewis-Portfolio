@@ -199,9 +199,11 @@ main {
         #a855f7
     );
 
-    -webkit-background-clip:text;
+    background-clip: text;
 
-    color:transparent;
+    -webkit-background-clip: text;
+
+    color: transparent;
 
 }
 
@@ -1048,5 +1050,68 @@ main {
 .skill-box p {
 
     color:#cbd5e1;
+
+}
+/* =====================
+404 PAGE
+===================== */
+
+
+.error-section {
+
+    min-height:70vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+
+
+.error-section h1 {
+
+    font-size:120px;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        #38bdf8,
+        #a855f7
+    );
+
+
+    background-clip: text;
+
+    -webkit-background-clip: text;
+
+    color:transparent;
+
+}
+
+
+
+.error-section h2 {
+
+    font-size:35px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.error-section p {
+
+    color:#cbd5e1;
+
+    margin-bottom:30px;
 
 }
