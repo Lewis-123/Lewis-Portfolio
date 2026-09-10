@@ -32,18 +32,18 @@ body {
 
 .navbar {
 
-    display: flex;
+    display:flex;
 
-    justify-content: space-between;
+    justify-content:space-between;
 
-    align-items: center;
+    align-items:center;
 
-    padding: 25px 8%;
+    padding:25px 8%;
 
     background:
     rgba(15,23,42,0.75);
 
-    backdrop-filter: blur(10px);
+    backdrop-filter:blur(10px);
 
     border-bottom:
     1px solid rgba(255,255,255,0.1);
@@ -54,13 +54,13 @@ body {
 
 .logo a {
 
-    text-decoration: none;
+    text-decoration:none;
 
-    color: white;
+    color:white;
 
-    font-size: 28px;
+    font-size:28px;
 
-    font-weight: 700;
+    font-weight:700;
 
 }
 
@@ -68,7 +68,7 @@ body {
 
 .logo span {
 
-    color: #38bdf8;
+    color:#38bdf8;
 
 }
 
@@ -76,9 +76,9 @@ body {
 
 .nav-links {
 
-    display: flex;
+    display:flex;
 
-    gap: 25px;
+    gap:25px;
 
 }
 
@@ -86,13 +86,13 @@ body {
 
 .nav-links a {
 
-    color: white;
+    color:white;
 
-    text-decoration: none;
+    text-decoration:none;
 
-    font-weight: 500;
+    font-weight:500;
 
-    transition: .3s;
+    transition:.3s;
 
 }
 
@@ -100,7 +100,26 @@ body {
 
 .nav-links a:hover {
 
-    color: #38bdf8;
+    color:#38bdf8;
+
+}
+
+
+/* Mobile menu button */
+
+.menu-toggle {
+
+    display:none;
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    font-size:30px;
+
+    cursor:pointer;
 
 }
 
@@ -113,30 +132,30 @@ body {
 
 main {
 
-    padding: 60px 8%;
+    padding:60px 8%;
 
 }
 
 
 
 /* =====================
-   HERO SECTION
+   HERO
 ===================== */
 
 
 .hero {
 
-    min-height: 75vh;
+    min-height:75vh;
 
-    display: flex;
+    display:flex;
 
-    flex-direction: column;
+    flex-direction:column;
 
-    justify-content: center;
+    justify-content:center;
 
-    align-items: center;
+    align-items:center;
 
-    text-align: center;
+    text-align:center;
 
 }
 
@@ -144,7 +163,7 @@ main {
 
 .profile-container {
 
-    margin-bottom: 25px;
+    margin-bottom:25px;
 
 }
 
@@ -152,15 +171,15 @@ main {
 
 .profile-image {
 
-    width: 180px;
+    width:180px;
 
-    height: 180px;
+    height:180px;
 
-    border-radius: 50%;
+    border-radius:50%;
 
-    object-fit: cover;
+    object-fit:cover;
 
-    border: 4px solid #38bdf8;
+    border:4px solid #38bdf8;
 
     box-shadow:
     0 0 35px rgba(56,189,248,0.5);
@@ -171,7 +190,7 @@ main {
 
 .hero h1 {
 
-    font-size: 55px;
+    font-size:55px;
 
     background:
     linear-gradient(
@@ -180,9 +199,9 @@ main {
         #a855f7
     );
 
-    -webkit-background-clip: text;
+    -webkit-background-clip:text;
 
-    color: transparent;
+    color:transparent;
 
 }
 
@@ -190,11 +209,11 @@ main {
 
 .hero h2 {
 
-    margin-top: 20px;
+    margin-top:20px;
 
-    font-size: 28px;
+    font-size:28px;
 
-    color: #cbd5e1;
+    color:#cbd5e1;
 
 }
 
@@ -202,16 +221,15 @@ main {
 
 .hero p {
 
-    margin-top: 20px;
+    margin-top:20px;
 
-    max-width: 750px;
+    max-width:750px;
 
-    font-size: 20px;
+    font-size:20px;
 
     color:#cbd5e1;
 
 }
-
 
 
 /* =====================
@@ -284,12 +302,13 @@ main {
 
 
 /* =====================
- ABOUT PAGE
+ ABOUT
 ===================== */
 
 
 .about-section h1,
-.projects-section h1 {
+.projects-section h1,
+.contact-section h1 {
 
     font-size:45px;
 
@@ -301,14 +320,14 @@ main {
 
 .about-card,
 .info-card,
-.project-card {
+.project-card,
+.contact-card,
+.contact-form-card {
 
     background:
-
     rgba(255,255,255,0.05);
 
     border:
-
     1px solid rgba(255,255,255,0.1);
 
     border-radius:20px;
@@ -319,88 +338,9 @@ main {
 
 
 
-.about-card {
-
-    line-height:1.8;
-
-}
-
-
-
-.about-grid {
-
-    display:grid;
-
-    grid-template-columns:
-
-    repeat(auto-fit,minmax(250px,1fr));
-
-    gap:25px;
-
-    margin-top:30px;
-
-}
-
-
-
-.info-card h2 {
-
-    color:#38bdf8;
-
-}
-
-
-/* =====================
- SKILLS
-===================== */
-
-
-.skills {
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:12px;
-
-    margin-top:20px;
-
-}
-
-
-
-.skills span,
-.tech span {
-
-    padding:8px 15px;
-
-    background:#1e293b;
-
-    border-radius:20px;
-
-    color:#38bdf8;
-
-    font-size:14px;
-
-}
-
-
-
 /* =====================
  PROJECTS
 ===================== */
-
-
-.section-intro {
-
-    color:#cbd5e1;
-
-    max-width:800px;
-
-    margin-bottom:40px;
-
-}
-
 
 
 .projects-grid {
@@ -408,7 +348,6 @@ main {
     display:grid;
 
     grid-template-columns:
-
     repeat(auto-fit,minmax(300px,1fr));
 
     gap:25px;
@@ -443,22 +382,6 @@ main {
 
 
 
-.project-card h3 {
-
-    margin:10px 0;
-
-}
-
-
-
-.project-card p {
-
-    color:#cbd5e1;
-
-}
-
-
-
 .tech {
 
     display:flex;
@@ -473,105 +396,24 @@ main {
 
 
 
-.project-card a {
+.tech span,
+.skills span {
 
-    color:white;
+    background:#1e293b;
 
-    text-decoration:none;
+    padding:8px 15px;
 
-    font-weight:600;
-
-}
-
-
-
-.project-card a:hover {
+    border-radius:20px;
 
     color:#38bdf8;
 
-}
+    font-size:14px;
 
+}
 
 
 /* =====================
- FOOTER
-===================== */
-
-
-footer {
-
-    text-align:center;
-
-    padding:30px;
-
-    color:#94a3b8;
-
-}
-
-
-
-/* =====================
- RESPONSIVE DESIGN
-===================== */
-
-
-@media(max-width:768px){
-
-
-.navbar {
-
-    flex-direction:column;
-
-    gap:20px;
-
-}
-
-
-
-.nav-links {
-
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-}
-
-
-
-.hero h1 {
-
-    font-size:40px;
-
-}
-
-
-
-.hero h2 {
-
-    font-size:22px;
-
-}
-
-
-
-.hero p {
-
-    font-size:17px;
-
-}
-
-
-
-.hero-buttons {
-
-    flex-direction:column;
-
-}
-
-
-}
-/* =====================
- CONTACT PAGE
+ CONTACT
 ===================== */
 
 
@@ -583,46 +425,6 @@ footer {
     repeat(auto-fit,minmax(280px,1fr));
 
     gap:25px;
-
-    margin-top:30px;
-
-}
-
-
-
-.contact-card,
-.contact-form-card {
-
-    background:
-    rgba(255,255,255,0.05);
-
-    border:
-    1px solid rgba(255,255,255,0.1);
-
-    border-radius:20px;
-
-    padding:30px;
-
-}
-
-
-
-.contact-card h2,
-.contact-form-card h2 {
-
-    color:#38bdf8;
-
-    margin-bottom:20px;
-
-}
-
-
-
-.contact-card p {
-
-    margin-bottom:15px;
-
-    color:#cbd5e1;
 
 }
 
@@ -661,12 +463,7 @@ footer {
 .contact-form-card input,
 .contact-form-card textarea {
 
-
     background:#1e293b;
-
-    border:
-
-    1px solid rgba(255,255,255,0.1);
 
     color:white;
 
@@ -674,17 +471,7 @@ footer {
 
     border-radius:10px;
 
-    font-family:inherit;
-
-}
-
-
-
-.contact-form-card textarea {
-
-    height:150px;
-
-    resize:none;
+    border:none;
 
 }
 
@@ -696,22 +483,199 @@ footer {
 
     color:#020617;
 
-    border:none;
-
     padding:14px;
+
+    border:none;
 
     border-radius:25px;
 
-    font-weight:700;
-
-    cursor:pointer;
+    font-weight:bold;
 
 }
 
 
 
-.contact-form-card button:hover {
+/* =====================
+ FOOTER
+===================== */
 
-    opacity:0.8;
+
+footer {
+
+    text-align:center;
+
+    padding:30px;
+
+    color:#94a3b8;
+
+}
+
+
+
+.footer-links {
+
+    margin-top:15px;
+
+}
+
+
+
+.footer-links a {
+
+    color:#38bdf8;
+
+    text-decoration:none;
+
+    margin:0 12px;
+
+}
+
+
+
+/* =====================
+ MOBILE DESIGN
+===================== */
+
+
+@media(max-width:768px){
+
+
+.navbar {
+
+    padding:20px 6%;
+
+}
+
+
+
+.menu-toggle {
+
+    display:block;
+
+}
+
+
+
+.nav-links {
+
+
+    display:none;
+
+    position:absolute;
+
+    top:80px;
+
+    left:0;
+
+    width:100%;
+
+    background:#020617;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:25px;
+
+}
+
+
+
+.nav-links.active {
+
+    display:flex;
+
+}
+
+
+
+main {
+
+    padding:40px 6%;
+
+}
+
+
+
+.hero h1 {
+
+    font-size:38px;
+
+}
+
+
+
+.hero h2 {
+
+    font-size:22px;
+
+}
+
+
+
+.hero p {
+
+    font-size:16px;
+
+}
+
+
+
+.profile-image {
+
+    width:140px;
+
+    height:140px;
+
+}
+
+
+
+.hero-buttons {
+
+    flex-direction:column;
+
+    width:100%;
+
+}
+
+
+
+.btn {
+
+    width:100%;
+
+}
+
+
+
+.about-section h1,
+.projects-section h1,
+.contact-section h1 {
+
+    font-size:35px;
+
+}
+
+
+
+.projects-grid {
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.footer-links {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
 
 }

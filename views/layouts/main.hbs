@@ -10,6 +10,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
+    <meta name="description"
+    content="Lewis Mucheru - Software Developer specializing in Full Stack Development, Artificial Intelligence, Machine Learning and Data Science.">
+
+
+    <meta name="author"
+    content="Lewis Mucheru">
+
+
     <title>
         Lewis Mucheru | {{title}}
     </title>
@@ -49,7 +57,15 @@
 
 
 
-    <div class="nav-links">
+    <button class="menu-toggle" id="menu-toggle">
+
+        ☰
+
+    </button>
+
+
+
+    <div class="nav-links" id="nav-links">
 
 
         <a href="/">
@@ -100,8 +116,52 @@
     </p>
 
 
+
+    <div class="footer-links">
+
+
+        <a href="https://github.com/Lewis-123" target="_blank">
+            GitHub
+        </a>
+
+
+        <a href="https://www.linkedin.com/in/lewis-mucheru-6468b7228/" target="_blank">
+            LinkedIn
+        </a>
+
+
+        <a href="mailto:mucherulewis@gmail.com">
+            Email
+        </a>
+
+
+    </div>
+
+
+
 </footer>
 
+
+
+
+
+<script>
+
+
+const menuButton = document.getElementById("menu-toggle");
+
+const navLinks = document.getElementById("nav-links");
+
+
+
+menuButton.addEventListener("click",()=>{
+
+    navLinks.classList.toggle("active");
+
+});
+
+
+</script>
 
 
 
