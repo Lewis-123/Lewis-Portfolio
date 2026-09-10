@@ -1,17 +1,25 @@
 {
   "name": "lewis-portfolio",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Personal portfolio website for Lewis Mucheru - Software Developer, AI and Machine Learning Developer",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Lewis-123/Lewis-Portfolio.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "portfolio",
+    "software-developer",
+    "full-stack",
+    "artificial-intelligence",
+    "machine-learning",
+    "data-science"
+  ],
+  "author": "Lewis Mucheru",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
