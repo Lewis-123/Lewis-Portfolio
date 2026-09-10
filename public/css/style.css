@@ -920,3 +920,133 @@ main {
 
 
 }
+/* =====================
+ ABOUT TIMELINE
+===================== */
+
+
+.section-title {
+
+    margin-top:60px;
+
+    margin-bottom:25px;
+
+    font-size:35px;
+
+}
+
+
+
+.timeline {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+
+
+.timeline-item {
+
+    background:
+
+    rgba(255,255,255,0.05);
+
+
+    border-left:
+
+    4px solid #38bdf8;
+
+
+    padding:25px;
+
+
+    border-radius:15px;
+
+}
+
+
+
+.timeline-item h3 {
+
+    color:#38bdf8;
+
+}
+
+
+
+.timeline-item span {
+
+    color:#94a3b8;
+
+    font-size:14px;
+
+}
+
+
+
+.timeline-item p {
+
+    margin-top:10px;
+
+    color:#cbd5e1;
+
+}
+
+
+
+
+
+.skills-category {
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+
+}
+
+
+
+.skill-box {
+
+    background:
+
+    rgba(255,255,255,0.05);
+
+
+    border:
+
+    1px solid rgba(255,255,255,0.1);
+
+
+    padding:25px;
+
+
+    border-radius:20px;
+
+}
+
+
+
+.skill-box h3 {
+
+    color:#38bdf8;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.skill-box p {
+
+    color:#cbd5e1;
+
+}
