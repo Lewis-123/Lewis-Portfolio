@@ -12,6 +12,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Lewis Mucheru | Software Developer">
     <meta property="og:description" content="Lewis Mucheru - Software Developer specializing in Full Stack Development, Artificial Intelligence, Machine Learning and Data Science.">
+    <meta property="og:image" content="/images/favicon.png">
 
     <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
     <link rel="alternate icon" href="/images/favicon.png">
@@ -41,7 +42,9 @@
 
     <header class="masthead" id="masthead">
         <div class="masthead-inner">
-            <a class="wordmark" href="/">Lewis<span>Mucheru</span></a>
+            <a class="wordmark" href="/">
+                <img class="wordmark-mark" src="/images/logo.png" alt="Lewis Mucheru — home" width="200" height="132" decoding="async">
+            </a>
 
             <div class="nav-cluster">
                 <nav class="nav" id="nav" aria-label="Primary">
@@ -99,6 +102,7 @@
                 <li role="presentation"><a role="option" href="/about" data-terms="about background education journey">About<span>Page</span></a></li>
                 <li role="presentation"><a role="option" href="/projects" data-terms="projects work portfolio">Projects<span>Page</span></a></li>
                 <li role="presentation"><a role="option" href="/contact" data-terms="contact email phone hire message">Contact<span>Page</span></a></li>
+                <li role="presentation"><a role="option" href="/files/Lewis-Mucheru-Resume.pdf" target="_blank" rel="noopener noreferrer" data-terms="resume cv curriculum vitae">View Resume<span>PDF</span></a></li>
                 <li class="palette-group" role="presentation">Projects</li>
                 {{#each allProjects}}
                 <li role="presentation"><a role="option" href="/projects/{{this.slug}}" data-terms="{{this.slug}} {{this.subtitle}} {{join this.tech ' '}}">{{this.name}}<span>Project</span></a></li>

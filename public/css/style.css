@@ -362,19 +362,19 @@ main {
 
 .wordmark {
     display: inline-flex;
-    align-items: baseline;
-    gap: 0.5rem;
-    font-size: 0.9375rem;
-    font-weight: 500;
-    letter-spacing: -0.012em;
-    color: var(--text);
+    align-items: center;
     text-decoration: none;
     user-select: none;
+    border-radius: 0.35rem;
 }
 
-.wordmark span {
-    color: var(--text-3);
-    transition: color var(--base) var(--ease);
+/* The monogram is the only saturated thing in the masthead, so it stays
+   restrained — large enough to read as a mark, small enough not to shout. */
+.wordmark-mark {
+    height: 1.5rem;
+    width: auto;
+    flex-shrink: 0;
+    transition: opacity var(--base) var(--ease);
 }
 
 .nav-cluster {
@@ -748,6 +748,10 @@ main {
 
     .portrait:hover img {
         filter: grayscale(0) contrast(1);
+    }
+
+    .wordmark:hover .wordmark-mark {
+        opacity: 0.72;
     }
 
     .link:hover {
@@ -1316,10 +1320,6 @@ body.is-locked {
     .portrait {
         order: -1;
         width: 8rem;
-    }
-
-    .wordmark span {
-        display: none;
     }
 
     /* No keyboard to hint at, so the palette shrinks to its icon. */

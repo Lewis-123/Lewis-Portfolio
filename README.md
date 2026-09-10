@@ -24,7 +24,8 @@ The portfolio highlights my work in:
 - Light and dark themes, remembered between visits
 - Reading progress indicator on project pages
 - Copy-to-clipboard contact details with inline confirmation
-- Resume download, LinkedIn and GitHub links
+- Resume viewable in the browser or downloadable, plus LinkedIn and GitHub links
+- LM monogram in the masthead, alongside the wordmark
 - About section with education and experience timeline
 - Responsive from 320px up, with reduced-motion and high-contrast support
 
@@ -77,20 +78,38 @@ Lewis-Portfolio
 │   │   └── site.js
 │   ├── images
 │   │   ├── profile.jpg
+│   │   ├── logo.png         # masthead monogram, cut from favicon.png
 │   │   ├── favicon.svg
-│   │   └── favicon.png
+│   │   └── favicon.png      # full logo badge
 │   └── files
 │       └── Lewis-Mucheru-Resume.pdf
+├── tools
+│   └── make-logo.ps1        # regenerates images/logo.png
 ├── package.json
 ├── vercel.json
 └── README.md
 
 ## Adding or editing a project
 
-Everything shown on the work index and case study pages comes from
-`data/projects.js`. Add an object to the `PROJECTS` array and the route,
+Everything shown on the projects index and the individual project pages comes
+from `data/projects.js`. Add an object to the `PROJECTS` array and the route,
 the index, the command palette and the previous/next links all pick it up.
-Set `featured: true` to surface it on the home page.
+Give it a `featured` number to surface it on the home page — the number sets
+the order there, independently of the array order.
+
+## Regenerating the masthead logo
+
+`public/images/favicon.png` is the full logo badge: the LM monogram inside a
+ring, with "LEWIS MUCHERU / SOFTWARE DEVELOPER" set beneath it. That text is
+illegible at masthead size, so `public/images/logo.png` is just the monogram,
+cut out onto transparency and scaled down.
+
+If the source badge is ever replaced, re-cut it with:
+
+powershell -ExecutionPolicy Bypass -File tools\make-logo.ps1
+
+The crop rectangle in that script is measured in source pixels, so it will need
+updating if the new badge has different proportions.
 
 ## Installation
 
