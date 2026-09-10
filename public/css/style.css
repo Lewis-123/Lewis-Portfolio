@@ -698,3 +698,91 @@ main {
     opacity:0.85;
 
 }
+/* =====================
+ TECHNOLOGY SECTION
+===================== */
+
+
+.technology-section {
+
+    margin-top:80px;
+
+    text-align:center;
+
+}
+
+
+
+.technology-section h2 {
+
+    font-size:35px;
+
+    margin-bottom:35px;
+
+    color:white;
+
+}
+
+
+
+
+.technology-grid {
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(160px,1fr));
+
+    gap:20px;
+
+}
+
+
+
+
+.technology-card {
+
+    background:
+
+    rgba(255,255,255,0.05);
+
+
+    border:
+
+    1px solid rgba(255,255,255,0.1);
+
+
+    padding:20px;
+
+
+    border-radius:20px;
+
+
+    color:#38bdf8;
+
+
+    font-weight:600;
+
+
+    transition:.3s;
+
+}
+
+
+
+
+.technology-card:hover {
+
+
+    transform:translateY(-8px);
+
+
+    border-color:#38bdf8;
+
+
+    box-shadow:
+
+    0 0 20px rgba(56,189,248,0.3);
+
+
+}
