@@ -4,8 +4,8 @@
   "description": "Personal portfolio website for Lewis Mucheru - Software Developer, AI and Machine Learning Developer",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
   },
   "repository": {
     "type": "git",

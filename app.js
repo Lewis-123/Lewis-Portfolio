@@ -33,3 +33,4 @@ app.use("/", routes);
 app.listen(PORT, () => {
     console.log(`Portfolio running on port ${PORT}`);
 });
+module.exports = app;
